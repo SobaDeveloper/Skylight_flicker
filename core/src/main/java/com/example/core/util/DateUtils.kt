@@ -25,7 +25,7 @@ object DateUtils {
     fun formatTakenDate(takenDateTime: String): String? {
         return try {
             val inputFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US)
-            val date = inputFormat.parse(takenDateTime)
+            val date = takenDateTime?.let { inputFormat.parse(it) }
             date?.let { outputFormat.format(it) }
         } catch (e: Exception) {
             null

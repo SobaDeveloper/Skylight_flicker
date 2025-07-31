@@ -7,4 +7,12 @@
     <string name="photo_search_loading_text">Searching photos…</string>
     <string name="photo_search_empty_state_text">Enter tags to search for photos</string>
     <string name="photo_search_no_results_text">No photos matched your search. Try a different tag.</string>
+
+    <!-- Photo Detail-->
+    <string name="photo_detail_close_content_description">Close</string>
+    <string name="photo_detail_info_content_description">Show description</string>
+    <string name="photo_description_dialog_close_cta">Close</string>
+
+    <string name="taken">Taken</string>
+    <string name="posted">Posted</string>
 </resources>
