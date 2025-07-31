@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Skylight Flickr</string>
+
+    <!-- Photo Search-->
+    <string name="photo_search_app_bar_label">Search Photos</string>
+    <string name="photo_search_clear_content_description">Clear search</string>
+    <string name="photo_search_loading_text">Searching photos…</string>
+    <string name="photo_search_empty_state_text">Enter tags to search for photos</string>
 </resources>
