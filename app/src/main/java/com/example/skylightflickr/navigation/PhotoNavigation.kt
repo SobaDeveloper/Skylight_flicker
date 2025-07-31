@@ -19,7 +19,7 @@ data class PhotoDetailScreen(
 )
 
 @Composable
-fun FlickrNavigation(
+fun PhotoNavigation(
     navController: NavHostController = rememberNavController(),
 ) {
     NavHost(

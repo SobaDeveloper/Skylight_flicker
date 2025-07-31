@@ -4,8 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.MaterialTheme
-import com.example.skylightflickr.navigation.FlickrNavigation
+import com.example.skylightflickr.navigation.PhotoNavigation
 import com.example.skylightflickr.ui.theme.SkylightFlickrTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +14,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SkylightFlickrTheme {
-                FlickrNavigation()
+                PhotoNavigation()
             }
         }
     }
