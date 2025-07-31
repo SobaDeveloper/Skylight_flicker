@@ -59,4 +59,8 @@ dependencies {
     api(libs.retrofit)
     implementation(libs.logging.interceptor)
     implementation(libs.converter.moshi)
+
+    // Testing
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockwebserver)
 }
