@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -69,6 +70,12 @@ dependencies {
 
     // Koin Compose
     implementation(libs.koin.androidx.compose)
+
+    // Glide
+    implementation(libs.glide.compose)
+
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
 
     // Testing
     testImplementation(libs.junit)
