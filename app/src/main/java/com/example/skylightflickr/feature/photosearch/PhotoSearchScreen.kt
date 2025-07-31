@@ -101,23 +101,18 @@ fun PhotoSearchScreen(
         ) {
             when (val state = viewState) {
                 is ViewState.Success -> {
-                    PhotoGrid(
-                        photos = state.data,
-                        onPhotoClick = onPhotoClick,
-                    )
+                    if (state.data.isEmpty()) {
+                        PhotoSearchEmptyState(message = stringResource(R.string.photo_search_no_results_text))
+                    } else {
+                        PhotoGrid(
+                            photos = state.data,
+                            onPhotoClick = onPhotoClick,
+                        )
+                    }
                 }
 
                 is ViewState.Idle -> {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = stringResource(R.string.photo_search_empty_state_text),
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
+                    PhotoSearchEmptyState(message = stringResource(R.string.photo_search_empty_state_text))
                 }
 
                 is ViewState.Loading -> {

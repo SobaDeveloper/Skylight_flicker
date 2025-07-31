@@ -6,4 +6,5 @@
     <string name="photo_search_clear_content_description">Clear search</string>
     <string name="photo_search_loading_text">Searching photos…</string>
     <string name="photo_search_empty_state_text">Enter tags to search for photos</string>
+    <string name="photo_search_no_results_text">No photos matched your search. Try a different tag.</string>
 </resources>
