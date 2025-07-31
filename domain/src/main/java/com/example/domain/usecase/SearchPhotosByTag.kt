@@ -11,8 +11,7 @@ class SearchPhotosByTag(
         tagMode: String = "any",
         perPage: Int = 50,
         page: Int = 1
-    ): Result<List<Photo>> {
-        return repository.searchPhotos(tags, tagMode, perPage, page)
+    ): Result<List<Photo>> =
+        repository.searchPhotos(tags, tagMode, perPage, page)
             .map { response -> response.photos.photoList }
-    }
 }
