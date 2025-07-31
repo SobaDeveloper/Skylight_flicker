@@ -1,17 +1,33 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)
 }
+
+val localProperties = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
+}
+val flickrBaseUrl = localProperties["FLICKR_BASE_URL"] as String
+val flickrApiKey = localProperties["FLICKR_API_KEY"] as String
 
 android {
     namespace = "com.example.data"
-    compileSdk = 34
+    compileSdk = 35
+
+    buildFeatures {
+        buildConfig = true
+    }
 
     defaultConfig {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        buildConfigField("String", "FLICKR_BASE_URL", "\"$flickrBaseUrl\"")
+        buildConfigField("String", "FLICKR_API_KEY", "\"$flickrApiKey\"")
     }
 
     buildTypes {
