@@ -1,11 +1,11 @@
 package com.example.domain.mapper
 
 import com.example.core.util.PhotoUtils
-import com.example.data.service.flickr.dto.FlickrPhotoInfoResponseDto
+import com.example.data.service.flickr.dto.PhotoInfoResponseDto
 import com.example.data.service.flickr.dto.PhotoInfoDto
 import com.example.domain.models.PhotoDetails
 
-fun FlickrPhotoInfoResponseDto.toModel(): PhotoDetails = photo.toModel()
+fun PhotoInfoResponseDto.toModel(): PhotoDetails = photo.toModel()
 
 fun PhotoInfoDto.toModel(): PhotoDetails =
     PhotoDetails(

@@ -4,7 +4,7 @@ import com.example.core.model.PhotoSize
 import com.example.core.util.PhotoUtils
 import com.squareup.moshi.Json
 
-data class FlickrPhotosResponseDto(
+data class PhotosResponseDto(
     @Json(name = "photos") val photosDto: PhotosDto,
     val stat: String
 )
@@ -24,9 +24,6 @@ data class PhotoDto(
     val server: String,
     val farm: Int,
     val title: String,
-    @Json(name = "ispublic") val isPublic: Int,
-    @Json(name = "isfriend") val isFriend: Int,
-    @Json(name = "isfamily") val isFamily: Int
 ) {
 
     fun getPhotoUrl(): String = PhotoUtils.buildImageUrl(

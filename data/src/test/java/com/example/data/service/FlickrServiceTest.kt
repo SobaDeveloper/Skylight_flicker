@@ -1,7 +1,7 @@
 package com.example.data.service
 
 import com.example.data.service.flickr.FlickrService
-import com.example.data.service.flickr.dto.FlickrPhotosResponseDto
+import com.example.data.service.flickr.dto.PhotosResponseDto
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import kotlinx.coroutines.runBlocking
@@ -74,7 +74,7 @@ class FlickrServiceTest {
         val response = flickrService.searchPhotosByTag(tags = "test")
 
         assertTrue(response.isSuccessful)
-        val body: FlickrPhotosResponseDto? = response.body()
+        val body: PhotosResponseDto? = response.body()
         assertNotNull(body)
         assertEquals("ok", body?.stat)
         assertEquals(1, body?.photosDto?.photoDto?.size)

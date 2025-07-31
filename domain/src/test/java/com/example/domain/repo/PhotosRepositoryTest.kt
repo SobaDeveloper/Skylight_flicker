@@ -1,7 +1,7 @@
 package com.example.domain.repo
 
 import com.example.data.service.flickr.FlickrService
-import com.example.data.service.flickr.dto.FlickrPhotosResponseDto
+import com.example.data.service.flickr.dto.PhotosResponseDto
 import com.example.data.service.flickr.dto.PhotoDto
 import com.example.data.service.flickr.dto.PhotosDto
 import io.mockk.coEvery
@@ -59,7 +59,7 @@ class PhotosRepositoryTest {
         assertTrue(result.exceptionOrNull()?.message?.contains("API call failed") == true)
     }
 
-    private fun createDummyFlickrPhotosResponseDto() = FlickrPhotosResponseDto(
+    private fun createDummyFlickrPhotosResponseDto() = PhotosResponseDto(
         photosDto = createDummyPhotosDto(),
         stat = "ok"
     )

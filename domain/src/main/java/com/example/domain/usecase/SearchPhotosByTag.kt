@@ -9,7 +9,7 @@ class SearchPhotosByTag(
     suspend operator fun invoke(
         tags: String,
         tagMode: String = "any",
-        perPage: Int = 50,
+        perPage: Int = 20,
         page: Int = 1
     ): Result<List<Photo>> =
         repository.searchPhotos(tags, tagMode, perPage, page)

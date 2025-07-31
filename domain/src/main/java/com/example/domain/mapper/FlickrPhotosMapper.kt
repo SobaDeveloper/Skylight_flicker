@@ -1,13 +1,13 @@
 package com.example.domain.mapper
 
-import com.example.data.service.flickr.dto.FlickrPhotosResponseDto
+import com.example.data.service.flickr.dto.PhotosResponseDto
 import com.example.data.service.flickr.dto.PhotoDto
 import com.example.data.service.flickr.dto.PhotosDto
 import com.example.domain.models.FlickrPhotos
 import com.example.domain.models.Photo
 import com.example.domain.models.Photos
 
-fun FlickrPhotosResponseDto.toModel(): FlickrPhotos =
+fun PhotosResponseDto.toModel(): FlickrPhotos =
     FlickrPhotos(
         photos = photosDto.toModel()
     )

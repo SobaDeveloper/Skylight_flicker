@@ -1,7 +1,7 @@
 package com.example.data.service.flickr
 
-import com.example.data.service.flickr.dto.FlickrPhotoInfoResponseDto
-import com.example.data.service.flickr.dto.FlickrPhotosResponseDto
+import com.example.data.service.flickr.dto.PhotoInfoResponseDto
+import com.example.data.service.flickr.dto.PhotosResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -21,7 +21,7 @@ interface FlickrService {
         @Query("safe_search") safeSearch: Int = 1,
         @Query("format") format: String = FORMAT_JSON,
         @Query("nojsoncallback") noJsonCallback: Int = NO_JSON_CALLBACK
-    ): Response<FlickrPhotosResponseDto>
+    ): Response<PhotosResponseDto>
 
     /**
      * Get detailed photo info.
@@ -34,7 +34,7 @@ interface FlickrService {
         @Query("secret") secret: String? = null,
         @Query("format") format: String = FORMAT_JSON,
         @Query("nojsoncallback") noJsonCallback: Int = NO_JSON_CALLBACK
-    ): Response<FlickrPhotoInfoResponseDto>
+    ): Response<PhotoInfoResponseDto>
 
     companion object {
         private const val SEARCH_METHOD = "flickr.photos.search"
