@@ -12,12 +12,12 @@ data class PhotoInfoDto(
     val secret: String,
     val server: String,
     val farm: Int,
-    val dateuploaded: String,
-    val isfavorite: Int,
+    @Json(name = "dateuploaded") val dateUploaded: Long,
+    @Json(name = "isfavorite") val isFavorite: Int,
     val license: String,
-    val safety_level: String,
+    @Json(name = "safety_level") val safetyLevel: String,
     val rotation: Int,
-    val owner: OwnerDto,
+    val owner: OwnerDto?,
     val title: ContentDto,
     val description: ContentDto,
     val visibility: VisibilityDto,
@@ -34,10 +34,10 @@ data class OwnerDto(
     val nsid: String,
     val username: String,
     val realname: String,
-    val location: String,
+    val location: String?,
     val iconserver: String,
     val iconfarm: Int,
-    val path_alias: String?
+    @Json(name = "path_alias") val pathAlias: String?
 )
 
 data class ContentDto(
@@ -45,9 +45,9 @@ data class ContentDto(
 )
 
 data class VisibilityDto(
-    val ispublic: Int,
-    val isfriend: Int,
-    val isfamily: Int
+    @Json(name = "ispublic") val isPublic: Int,
+    @Json(name = "isfriend") val isFriend: Int,
+    @Json(name = "isfamily") val isFamily: Int
 )
 
 data class DatesDto(
@@ -55,7 +55,7 @@ data class DatesDto(
     val taken: String,
     val takengranularity: String,
     val takenunknown: String,
-    val lastupdate: String
+    @Json(name = "lastupdate") val lastUpdate: String
 )
 
 data class TagsDto(
@@ -107,10 +107,10 @@ data class CountryDto(
 )
 
 data class GeoPermsDto(
-    val ispublic: Int,
-    val iscontact: Int,
-    val isfriend: Int,
-    val isfamily: Int
+    @Json(name = "ispublic") val isPublic: Int,
+    @Json(name = "iscontact") val isContact: Int,
+    @Json(name = "isfriend") val isFriend: Int,
+    @Json(name = "isfamily") val isFamily: Int
 )
 
 data class UrlsDto(

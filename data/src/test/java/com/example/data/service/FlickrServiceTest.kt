@@ -1,4 +1,4 @@
-package com.example.data
+package com.example.data.service
 
 import com.example.data.service.flickr.FlickrService
 import com.example.data.service.flickr.dto.FlickrPhotosResponseDto

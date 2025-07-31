@@ -1,5 +1,7 @@
 package com.example.data.service.flickr.dto
 
+import com.example.core.model.PhotoSize
+import com.example.core.util.PhotoUtils
 import com.squareup.moshi.Json
 
 data class FlickrPhotosResponseDto(
@@ -27,13 +29,11 @@ data class PhotoDto(
     @Json(name = "isfamily") val isFamily: Int
 ) {
 
-    fun getPhotoUrl(size: PhotoSize = PhotoSize.MEDIUM): String =
-        "https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_${size.suffix}.jpg"
-}
-
-enum class PhotoSize(val suffix: String) {
-    SMALL("s"),
-    MEDIUM("m"),
-    MEDIUM_640("z"),
-    LARGE("b")
+    fun getPhotoUrl(): String = PhotoUtils.buildImageUrl(
+        farm = farm,
+        server = server,
+        id = id,
+        secret = secret,
+        size = PhotoSize.MEDIUM
+    )
 }
