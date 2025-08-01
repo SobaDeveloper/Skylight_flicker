@@ -4,19 +4,10 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -27,9 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.ImeAction
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.domain.models.Photo
 import com.example.skylightflickr.R
@@ -44,7 +33,6 @@ fun PhotoSearchScreen(
 ) {
     val viewModel: PhotoSearchViewModel = koinViewModel()
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
-    val keyboardController = LocalSoftwareKeyboardController.current
     val viewState by viewModel.viewState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
 
@@ -59,34 +47,10 @@ fun PhotoSearchScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    OutlinedTextField(
-                        value = searchQuery,
-                        onValueChange = viewModel::updateSearchQuery,
-                        label = { Text(stringResource(R.string.photo_search_app_bar_label)) },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(end = Spacing.md),
-                        singleLine = true,
-                        textStyle = MaterialTheme.typography.bodyLarge,
-                        keyboardOptions = KeyboardOptions(
-                            imeAction = ImeAction.Search
-                        ),
-                        keyboardActions = KeyboardActions(
-                            onSearch = {
-                                viewModel.searchPhotos(searchQuery.trim())
-                                keyboardController?.hide()
-                            }
-                        ),
-                        trailingIcon = {
-                            if (searchQuery.isNotEmpty()) {
-                                IconButton(onClick = { viewModel.updateSearchQuery("") }) {
-                                    Icon(
-                                        imageVector = Icons.Default.Close,
-                                        contentDescription = stringResource(R.string.photo_search_clear_content_description)
-                                    )
-                                }
-                            }
-                        }
+                    PhotoSearchBar(
+                        query = searchQuery,
+                        onQueryChange = viewModel::updateSearchQuery,
+                        onSearch = { viewModel.searchPhotos(searchQuery.trim()) }
                     )
                 }
             )
