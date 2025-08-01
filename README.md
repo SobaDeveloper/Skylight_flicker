@@ -44,7 +44,7 @@ A demo Android photo search app, demonstrating modern practices using Kotlin, Je
 ├── 🧩 app          # UI components, Navigation, ViewModels, and user interaction handling
 │   ├── feature     # Jetpack Compose screens, UI logic, and ViewModels
 │   ├── navigation  # Compose destinations and navigation graph
-│   └── theme       # Material 3 styling and theming
+│   └── ui          # Material 3 styling, theming, and components
 │
 ├── 🧩 domain       # Business logic, use cases, and domain models
 │   ├── model       # Domain models
