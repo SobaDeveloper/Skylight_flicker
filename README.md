@@ -3,6 +3,7 @@
 A demo Android photo search app, demonstrating modern practices using Kotlin, Jetpack Compose, Koin, and Clean / MVVM architecture.
 
 ![screen-20250731-1706223 (1)](https://github.com/user-attachments/assets/3414df8b-8a06-4725-a0b1-2fd36ea4223b)
+![infinite scroll](https://github.com/user-attachments/assets/41fb7090-85b8-4757-9078-aaf766698019)
 
 ## Built With
 
