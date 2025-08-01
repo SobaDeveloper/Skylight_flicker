@@ -12,10 +12,11 @@ private val Context.dataStore by preferencesDataStore(name = "search_prefs")
 class SearchPrefsManager(private val context: Context) {
 
     private val keySearchQuery = stringPreferencesKey("search_query")
+    private val defaultQuery = "skylight"
 
     val searchQueryFlow: Flow<String> = context.dataStore.data
         .map { preferences ->
-            preferences[keySearchQuery] ?: ""
+            preferences[keySearchQuery] ?: defaultQuery
         }
 
     suspend fun saveSearchQuery(query: String) {
