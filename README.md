@@ -17,6 +17,7 @@ A demo Android photo search app, demonstrating modern practices using Kotlin, Je
 - **[Moshi](https://github.com/square/moshi)** – JSON serialization library
 - **[Retrofit](https://square.github.io/retrofit/)**  - Type-safe HTTP client for Android and Java.
 - **[Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)** – Kotlin's native serialization library.
+- **[Paging 3](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)** – Efficient loading and displaying of paged data   
 - **[Glide](https://github.com/bumptech/glide)** – Image loading library for Android.
 - **[DataStore](https://developer.android.com/topic/libraries/architecture/datastore)** – Modern replacement for SharedPreferences.
 - **[JUnit](https://junit.org/junit4/)** - Unit testing framework
@@ -28,6 +29,7 @@ A demo Android photo search app, demonstrating modern practices using Kotlin, Je
 - Photo search
   - Query Flickr's API for a given tag
   - Display results in a gallery view
+  - Infinite scroll on search results (optional)
 - Photo detail page
   - Hero image
   - Photo title, description, date taken, date posted, link back to search results
@@ -46,7 +48,8 @@ A demo Android photo search app, demonstrating modern practices using Kotlin, Je
 ├── 🧩 domain       # Business logic, use cases, and domain models
 │   ├── model       # Domain models
 │   ├── usecase     # UseCases coordinating business rules
-│   ├── repository  # Repositories
+│   ├── paging      # Paging data sources
+│   ├── repo        # Repositories
 │   └── mapper      # DTO to domain model mappers
 │
 ├── 🧩 data         # Data sources (network)
