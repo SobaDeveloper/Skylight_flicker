@@ -1,36 +1,49 @@
 # SkylightFlickr
 
-A demo Android photo search app using the Flickr API, showcasing modern practices with Kotlin, Jetpack Compose, Koin, and Clean / MVVM architecture.
+A demo Android photo search app, demonstrating modern practices using Kotlin, Jetpack Compose, Koin, and Clean / MVVM architecture.
 
----
+![screen-20250731-1706223 (1)](https://github.com/user-attachments/assets/3414df8b-8a06-4725-a0b1-2fd36ea4223b)
 
 ## Built With
 
-- **[Kotlin](https://kotlinlang.org/)** – First class and official programming language for Android development.
-- **[Jetpack Compose](https://developer.android.com/jetpack/compose)** – Modern toolkit for building native UI.
-- **[Coroutines](https://developer.android.com/kotlin/coroutines)** – For asynchronous programming and managing long-running tasks.
-- **[Flow](https://developer.android.com/kotlin/flow)** – Kotlin Reactive streams for emitting events.
-- **[Koin](https://insert-koin.io/)** – Lightweight dependency injection for Kotlin.
+- **[Kotlin](https://kotlinlang.org/)** – First class and official programming language for Android development
+- **[Jetpack Compose](https://developer.android.com/jetpack/compose)** – Modern toolkit for building native UI
+- **[Coroutines](https://developer.android.com/kotlin/coroutines)** – Asynchronous programming and concurrency
+- **[Flow](https://developer.android.com/kotlin/flow)** – Reactive streams for handling asynchronous data
+- **[Koin](https://insert-koin.io/)** – Lightweight dependency injection for Kotlin
 - **[Jetpack Libraries](https://developer.android.com/jetpack)**
-  - [Navigation](https://developer.android.com/guide/navigation)
-  - [Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3)
-- **[Moshi](https://github.com/square/moshi)** – JSON library for Kotlin and Java.
+  - [Navigation Compose](https://developer.android.com/guide/navigation) - Type-safe navigation for Compose
+  - [Material 3](https://developer.android.com/jetpack/androidx/releases/compose-material3) - Material Design 3 components
+- **[Moshi](https://github.com/square/moshi)** – JSON serialization library
+- **[Retrofit](https://square.github.io/retrofit/)**  - Type-safe HTTP client for Android and Java.
 - **[Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization)** – Kotlin's native serialization library.
 - **[Glide](https://github.com/bumptech/glide)** – Image loading library for Android.
 - **[DataStore](https://developer.android.com/topic/libraries/architecture/datastore)** – Modern replacement for SharedPreferences.
+- **[JUnit](https://junit.org/junit4/)** - Unit testing framework
+- **[MockK](https://mockk.io/)** - Mocking library for Kotlin
 
----
+
+## Feature Requirements
+
+- Photo search
+  - Query Flickr's API for a given tag
+  - Display results in a gallery view
+- Photo detail page
+  - Hero image
+  - Photo title, description, date taken, date posted, link back to search results
+- Unit Tests
+
 
 ## Architecture Overview
 
 ```
 📦 SkylightFlickr
-├── 🧩 app          # UI layer: features, navigation, theme, and ViewModels
+├── 🧩 app          # UI components, Navigation, ViewModels, and user interaction handling
 │   ├── feature     # Jetpack Compose screens, UI logic, and ViewModels
 │   ├── navigation  # Compose destinations and navigation graph
 │   └── theme       # Material 3 styling and theming
 │
-├── 🧩 domain       # Business logic and app rules
+├── 🧩 domain       # Business logic, use cases, and domain models
 │   ├── model       # Domain models
 │   ├── usecase     # UseCases coordinating business rules
 │   ├── repository  # Repositories
@@ -40,9 +53,10 @@ A demo Android photo search app using the Flickr API, showcasing modern practice
 │   ├── service     # Retrofit interfaces and API DTOs
 │   └── network     # Networking config (Retrofit, interceptors)
 │
-├── 🧩 core         # Shared utilities and constants
+├── 🧩 core         # Shared utilities and common functionality
 │   └── util        # Date formatting, extension functions, etc.
 ```
+
 
 ## Project Setup
 
