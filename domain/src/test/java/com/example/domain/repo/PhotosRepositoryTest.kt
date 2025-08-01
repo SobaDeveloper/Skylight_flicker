@@ -78,9 +78,6 @@ class PhotosRepositoryTest {
         secret = "abc",
         server = "1",
         farm = 1,
-        title = "title",
-        isFamily = 1,
-        isFriend = 1,
-        isPublic = 1
+        title = "title"
     )
 }

@@ -2,7 +2,7 @@ package com.example.domain.repo
 
 import com.example.data.service.flickr.FlickrService
 import com.example.domain.mapper.toModel
-import com.example.domain.models.FlickrPhotos
+import com.example.domain.models.PhotosResponse
 import com.example.domain.models.PhotoDetails
 
 class PhotosRepository(private val service: FlickrService) {
@@ -12,7 +12,7 @@ class PhotosRepository(private val service: FlickrService) {
         tagMode: String = "any",
         perPage: Int = 20,
         page: Int = 1
-    ): Result<FlickrPhotos> = runCatching {
+    ): Result<PhotosResponse> = runCatching {
         val response = service.searchPhotosByTag(
             tags = tags,
             tagMode = tagMode,

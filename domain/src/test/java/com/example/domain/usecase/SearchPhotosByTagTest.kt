@@ -1,6 +1,6 @@
 package com.example.domain.usecase
 
-import com.example.domain.models.FlickrPhotos
+import com.example.domain.models.PhotosResponse
 import com.example.domain.models.Photo
 import com.example.domain.models.Photos
 import com.example.domain.repo.PhotosRepository
@@ -25,7 +25,7 @@ class SearchPhotosByTagTest {
     @Test
     fun testSearchPhotosSuccess() = runTest {
         val mockPhotos = listOf(mockk<Photo>())
-        val flickrPhotos = FlickrPhotos(
+        val photosResponse = PhotosResponse(
             photos = Photos(
                 page = 1,
                 pages = 1,
@@ -35,7 +35,7 @@ class SearchPhotosByTagTest {
             )
         )
 
-        coEvery { repository.searchPhotos("cats", "any", 50, 1) } returns Result.success(flickrPhotos)
+        coEvery { repository.searchPhotos("cats", "any", 50, 1) } returns Result.success(photosResponse)
 
         val result = searchPhotosByTag("cats")
 

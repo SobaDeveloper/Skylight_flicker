@@ -1,6 +1,6 @@
 package com.example.domain.models
 
-data class FlickrPhotos(
+data class PhotosResponse(
     val photos: Photos
 )
 

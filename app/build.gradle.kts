@@ -71,6 +71,9 @@ dependencies {
     // Koin Compose
     implementation(libs.koin.androidx.compose)
 
+    // Paging Compose
+    implementation (libs.androidx.paging.compose)
+
     // Glide
     implementation(libs.glide.compose)
 
