@@ -68,8 +68,6 @@ To build and run this project, please add the following to the `local.properties
 
 ```
 FLICKR_BASE_URL=https://www.flickr.com
-FLICKR_API_KEY=0bd5c6b1be09e68292e53d0fe2e8e2ad
+FLICKR_API_KEY=[YOUR API KEY]
 ```
-
-<img width="852" height="397" alt="Screenshot 2025-07-31 at 4 32 47 PM" src="https://github.com/user-attachments/assets/84dacc10-1097-4483-ae14-3f6379fc68ce" />
 
